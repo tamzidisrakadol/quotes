@@ -21,6 +21,7 @@ class MainActivity : AppCompatActivity() {
     lateinit var prevBtn:TextView
     lateinit var nextBtn:TextView
     lateinit var shareBtn:FloatingActionButton
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
