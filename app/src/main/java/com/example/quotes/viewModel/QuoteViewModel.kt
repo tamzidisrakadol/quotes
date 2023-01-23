@@ -9,7 +9,7 @@ class QuoteViewModel(val context:Context): ViewModel() {
 
     //create an empty array
     private var quoteList:Array<Quotes> = emptyArray()
-    private var index = 0
+    var index = 0
 
 
     init {

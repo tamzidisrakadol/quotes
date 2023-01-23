@@ -1,9 +1,11 @@
 package com.example.quotes.views
 
 import android.content.Intent
+import android.content.IntentFilter
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.TextView
+import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AlertDialog
 import androidx.lifecycle.ViewModelProvider
@@ -21,6 +23,7 @@ class MainActivity : AppCompatActivity() {
     lateinit var prevBtn: TextView
     lateinit var nextBtn: TextView
     lateinit var shareBtn: FloatingActionButton
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -44,7 +47,12 @@ class MainActivity : AppCompatActivity() {
 
 
         prevBtn.setOnClickListener {
-            setQuote(quoteViewModel.prevquote())
+            if (quoteViewModel.index==0){
+                Toast.makeText(this, "End of queue", Toast.LENGTH_SHORT).show()
+            }else{
+                setQuote(quoteViewModel.prevquote())
+            }
+
         }
 
         shareBtn.setOnClickListener {
